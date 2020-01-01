@@ -3,7 +3,8 @@ FROM debian:${basever}-slim AS build
 WORKDIR /srctree
 
 # Install necessary utilities.
-RUN apt-get --assume-yes update &&  apt-get --assume-yes install git build-essential
+RUN apt-get --assume-yes update && \
+    apt-get --assume-yes install git build-essential automake libtool
 
 # Clone libseccomp repository
 RUN git clone https://github.com/seccomp/libseccomp

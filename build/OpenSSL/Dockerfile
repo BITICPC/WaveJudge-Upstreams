@@ -12,9 +12,9 @@ WORKDIR /srctree/openssl
 # Build openssl from source
 ARG branch=OpenSSL_1_1_1-stable
 RUN git checkout ${branch}
-RUN ./config --prefix=/openssl/install --openssldir=/openssl/config && make && make install
+RUN ./config --prefix=/openssl/install --openssldir=/openssl/static && make && make install
 
 # Compose the final image, discarding the source files.
 FROM debian:${basever}-slim AS final
 WORKDIR /openssl
-COPY --from=build /openssl/* ./
+COPY --from=build /openssl ./

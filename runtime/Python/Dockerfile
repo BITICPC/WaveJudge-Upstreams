@@ -16,4 +16,4 @@ RUN ./configure --prefix=/python && make && make install
 # Compose the final docker image, discard the source code.
 FROM debian:${basever}-slim AS final
 WORKDIR /python
-COPY --from=build /python/* ./
+COPY --from=build /python ./

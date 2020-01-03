@@ -11,4 +11,4 @@ The following build arguments are available:
 
 ## Image Layout
 
-After successfully built, this docker image will have a directory `/openssl` containing a installation of `openssl`. The `/openssl/install` directory is the install prefix of `openssl` during build, and the `/openssl/config` directory is the directory containing the OpenSSL configuration and the root certificates.
+After successfully built, this docker image will have a directory `/openssl` containing a installation of `openssl`. The `/openssl/install` directory is the install prefix of `openssl` during build, and the `/openssl/static` directory is the directory containing the OpenSSL configuration and the root certificates.

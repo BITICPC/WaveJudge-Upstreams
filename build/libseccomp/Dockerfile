@@ -18,4 +18,4 @@ RUN ./autogen.sh && ./configure --prefix=/libseccomp && make && make install
 # Compose the final image, discarding the source files.
 FROM debian:${basever}-slim AS final
 WORKDIR /libseccomp
-COPY --from=build /libseccomp/* ./
+COPY --from=build /libseccomp ./
